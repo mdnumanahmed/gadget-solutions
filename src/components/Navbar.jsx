@@ -23,7 +23,7 @@ const Navbar = () => {
       <li className="flex">
         <NavLink
           to={"/"}
-          className="flex items-center px-4 -mb-1 border-2 border-transparent border-b-gray-200 dark:border- dark:text-gray-200 dark:border-purple-600 hover:bg-gray-200 hover:text-purple-600 hover:border-gray-200 hover:border-t-2 rounded-t-2xl"
+          className="flex items-center px-4 -mb-1 border-2 border-transparent border-b-gray-200 dark:border- text-black/70 font-medium dark:border-purple-600 dark:text-gray-200 hover:bg-gray-200 hover:text-purple-600 hover:border-gray-200 hover:border-t-2 rounded-t-2xl"
         >
           Home
         </NavLink>
@@ -31,7 +31,7 @@ const Navbar = () => {
       <li className="flex">
         <NavLink
           to={"/dashboard"}
-          className="flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-gray-200"
+          className="flex items-center px-4 -mb-1 text-black/70 font-medium border-b-2 dark:border- dark:text-gray-200"
         >
           Dashboard
         </NavLink>
@@ -39,7 +39,7 @@ const Navbar = () => {
       <li className="flex">
         <NavLink
           to={"/statistics"}
-          className="flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-gray-200"
+          className="flex items-center px-4 -mb-1 text-black/70 font-medium  border-b-2 dark:border- dark:text-gray-200"
         >
           Statistics
         </NavLink>
@@ -47,7 +47,7 @@ const Navbar = () => {
       <li className="flex">
         <NavLink
           to={"/profile"}
-          className="flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-gray-200"
+          className="flex items-center px-4 -mb-1 text-black/70 font-medium border-b-2 dark:border- dark:text-gray-200"
         >
           Profile
         </NavLink>
@@ -56,7 +56,7 @@ const Navbar = () => {
   );
   return (
     <div>
-      <header className="p-4 dark:bg-transparent dark:text-gray-800">
+      <header className="p-4  dark:text-gray-800">
         <div className="container flex justify-between h-14 lg:h-16 mx-auto ">
           <ul className="items-stretch hidden space-x-3 lg:flex">{navLinks}</ul>
           <Link
