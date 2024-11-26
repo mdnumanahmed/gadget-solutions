@@ -2,14 +2,28 @@ import { Link, NavLink } from "react-router-dom";
 import navbarLogo from "../assets/logo/logo_img.png";
 import { GrCart } from "react-icons/gr";
 import { FaRegHeart } from "react-icons/fa";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
+  const [theme, setTheme] = useState("");
+
+  const handleTheme = () => {
+    setTheme((theme) => !theme);
+  };
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme ? "synthwave" : "winter");
+    document
+      .querySelector("html")
+      .setAttribute("data-theme", theme ? "synthwave" : "winter");
+  }, [theme]);
+
   const navLinks = (
     <>
       <li className="flex">
         <NavLink
           to={"/"}
-          className="flex items-center px-4 -mb-1 border-2 border-transparent border-b-gray-200 dark:border- dark:text-purple-600 dark:border-purple-600 hover:border-purple-600 hover:border-t-2 rounded-t-2xl"
+          className="flex items-center px-4 -mb-1 border-2 border-transparent border-b-gray-200 dark:border- dark:text-gray-200 dark:border-purple-600 hover:bg-gray-200 hover:text-purple-600 hover:border-gray-200 hover:border-t-2 rounded-t-2xl"
         >
           Home
         </NavLink>
@@ -17,7 +31,7 @@ const Navbar = () => {
       <li className="flex">
         <NavLink
           to={"/dashboard"}
-          className="flex items-center px-4 -mb-1 border-b-2 dark:border-"
+          className="flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-gray-200"
         >
           Dashboard
         </NavLink>
@@ -25,7 +39,7 @@ const Navbar = () => {
       <li className="flex">
         <NavLink
           to={"/statistics"}
-          className="flex items-center px-4 -mb-1 border-b-2 dark:border-"
+          className="flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-gray-200"
         >
           Statistics
         </NavLink>
@@ -33,7 +47,7 @@ const Navbar = () => {
       <li className="flex">
         <NavLink
           to={"/profile"}
-          className="flex items-center px-4 -mb-1 border-b-2 dark:border-"
+          className="flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-gray-200"
         >
           Profile
         </NavLink>
@@ -42,18 +56,18 @@ const Navbar = () => {
   );
   return (
     <div>
-      <header className="p-4 dark:bg-gray-100 dark:text-gray-800">
-        <div className="container flex justify-between h-16 mx-auto">
+      <header className="p-4 dark:bg-transparent dark:text-gray-800">
+        <div className="container flex justify-between h-14 lg:h-16 mx-auto ">
           <ul className="items-stretch hidden space-x-3 lg:flex">{navLinks}</ul>
           <Link
             to={"/"}
             aria-label="Back to homepage"
-            className="flex items-center p-2 w-16 bg-white/90 border border-purple-800 rounded-full transition hover:ring-2 ring-offset-2 hover:bg-blue-100 duration-500"
+            className="flex flex-shrink lg:flex-shrink-0 items-center p-2 w-14 lg:w-16 bg-white/90 border border-purple-800 rounded-full transition hover:ring-2 ring-offset-2 hover:bg-blue-100 duration-500"
           >
             <img src={navbarLogo} alt="" className="" />
           </Link>
-          <div className="flex items-center md:space-x-4">
-            <div className="relative">
+          <div className="flex items-center space-x-4">
+            <div className="relative hidden md:inline-block">
               <span className="absolute inset-y-0 left-0 flex items-center pl-2">
                 <button
                   type="submit"
@@ -73,14 +87,14 @@ const Navbar = () => {
                 type="search"
                 name="Search"
                 placeholder="Search..."
-                className="w-32 py-2 pl-10 text-sm border rounded-md sm:w-auto focus:outline-none dark:bg-gray-100 dark:text-gray-800 focus:dark:bg-gray-50"
+                className="w-24 py-2 pl-10 text-sm border rounded-md sm:w-auto focus:outline-none dark:bg-gray-100 dark:text-gray-800 focus:dark:bg-gray-50"
               />
             </div>
             {/* Cart Icon */}
             <div
               tabIndex={0}
               role="button"
-              className="btn btn-outline btn-circle hover:bg-purple-600 hover:text-gray-50"
+              className="btn btn-outline bg-white border-2 btn-circle hover:bg-purple-600 hover:border-white hover:text-white dark:bg-purple-600"
             >
               <div className="indicator">
                 <GrCart className="text-2xl" />
@@ -90,7 +104,7 @@ const Navbar = () => {
             <div
               tabIndex={0}
               role="button"
-              className="btn btn-outline btn-circle hover:bg-purple-600 hover:text-gray-50"
+              className="btn btn-outline bg-white border-2 btn-circle hover:bg-purple-600 hover:border-white hover:text-white dark:bg-purple-600"
             >
               <div className="indicator">
                 <FaRegHeart className="text-2xl" />
@@ -100,13 +114,13 @@ const Navbar = () => {
             {/* Login logout */}
             <button
               type="button"
-              className="hidden px-6 py-2 font-semibold border rounded-2xl lg:block dark:bg-purple-600 dark:text-gray-50 hover:bg-purple-600 hover:text-gray-50"
+              className="hidden px-6 py-2 font-semibold bg-white text-purple-600 border rounded-2xl lg:block dark:bg-purple-600 dark:text-gray-50 hover:bg-purple-600 hover:text-white"
             >
               Log in
             </button>
             <button
               type="button"
-              className="hidden px-6 py-2 font-semibold border rounded-2xl lg:block dark:bg-purple-600 dark:text-gray-50 hover:bg-purple-600 hover:text-gray-50"
+              className="hidden px-6 py-2 font-semibold border bg-white text-purple-600 rounded-2xl lg:block dark:bg-purple-600 dark:text-gray-50 hover:bg-purple-600 hover:text-white"
             >
               Log Out
             </button>
@@ -115,6 +129,8 @@ const Navbar = () => {
             <label className="grid cursor-pointer place-items-center">
               <input
                 type="checkbox"
+                checked={theme}
+                onChange={handleTheme}
                 value="synthwave"
                 className="toggle theme-controller bg-base-content col-span-2 col-start-1 row-start-1"
               />
@@ -149,22 +165,27 @@ const Navbar = () => {
               </svg>
             </label>
           </div>
-          <button title="Open menu" type="button" className="p-4 lg:hidden">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              className="w-6 h-6 dark:text-gray-800"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              ></path>
-            </svg>
-          </button>
+          <div className="text-right">
+            <button title="Open menu" type="button" className="p-4 lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                className="w-6 h-6 dark:text-gray-800"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+            <ul className="absolute items-end flex flex-col space-y-3 hidden">
+              {navLinks}
+            </ul>
+          </div>
         </div>
       </header>
     </div>
