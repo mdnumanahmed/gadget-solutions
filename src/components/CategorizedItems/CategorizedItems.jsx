@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { DataContext } from "../../providers/DataProvider";
 import { NavLink } from "react-router-dom";
-import CategoryCard from "./CategoryCard";
+import ProductCard from "./ProductCard";
 
 const CategorizedItems = () => {
-  const { categories } = useContext(DataContext);
+  const { categories, products } = useContext(DataContext);
   return (
     <div>
       <h2 className="text-5xl font-bold text-center text-black mb-12">
@@ -22,8 +22,10 @@ const CategorizedItems = () => {
             </NavLink>
           ))}
         </div>
-        <div>
-          <CategoryCard />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {products.map((product) => (
+            <ProductCard key={product.product_id} product={product} />
+          ))}
         </div>
       </div>
     </div>
