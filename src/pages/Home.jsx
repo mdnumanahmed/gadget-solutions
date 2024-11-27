@@ -1,4 +1,4 @@
-import BottomHeader from "../components/BottomHeader";
+import FeaturedImage from "../components/FeaturedImage";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 
@@ -11,8 +11,8 @@ const Home = () => {
           <Hero />
         </div>
       </div>
-      <div className="container mx-auto px-16 -mt-72 max-w-screen-lg">
-        <BottomHeader />
+      <div className="container mx-auto -mt-72 mb-10">
+        <FeaturedImage />
       </div>
     </div>
   );
