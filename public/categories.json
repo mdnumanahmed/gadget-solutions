@@ -1,0 +1,57 @@
+[
+    {
+        "id": 0,
+        "name": "All Products",
+        "path": "gadgets/all-products"
+    },
+    {
+        "id": 1,
+        "name": "Smart Home",
+        "path": "gadgets/smart-home"
+    },
+    {
+        "id": 2,
+        "name": "Wearables",
+        "path": "gadgets/wearables"
+    },
+    {
+        "id": 3,
+        "name": "Health Tech",
+        "path": "gadgets/health-tech"
+    },
+    {
+        "id": 4,
+        "name": "Robotics",
+        "path": "gadgets/robotics"
+    },
+    {
+        "id": 5,
+        "name": "VR/AR",
+        "path": "gadgets/vr-ar"
+    },
+    {
+        "id": 6,
+        "name": "AI Assistants",
+        "path": "gadgets/ai"
+    },
+    {
+        "id": 7,
+        "name": "3D Printing",
+        "path": "gadgets/3d-printing"
+    },
+    {
+        "id": 8,
+        "name": "Gaming",
+        "path": "gadgets/gaming"
+    },
+    {
+        "id": 9,
+        "name": "Eco Gadgets",
+        "path": "gadgets/eco"
+    },
+    {
+        "id": 10,
+        "name": "Safety",
+        "path": "gadgets/safety"
+    }
+]

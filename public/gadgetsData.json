@@ -1,0 +1,104 @@
+[
+    {
+        "product_id": 101,
+        "product_title": "Smart Thermostat",
+        "product_image": "https://i.ibb.co.com/4TyWYyd/Smart-Thermostat.jpg",
+        "category": "Smart Home",
+        "price": 199.99,
+        "description": "Control your home's temperature remotely and save energy.",
+        "specifications": [
+            "Wi-Fi enabled",
+            "Works with Alexa and Google Assistant",
+            "Energy-saving modes"
+        ],
+        "availability": true,
+        "rating": 4.7,
+        "brand": "EcoTech",
+        "release_date": "2023-05-10"
+    },
+    {
+        "product_id": 102,
+        "product_title": "Smart Doorbell",
+        "product_image": "https://i.ibb.co.com/TMWYBMJ/Smart-Doorbell.jpg",
+        "category": "Smart Home",
+        "price": 149.99,
+        "description": "See and talk to visitors at your door from anywhere.",
+        "specifications": [
+            "1080p HD video",
+            "Two-way audio",
+            "Motion detection"
+        ],
+        "availability": true,
+        "rating": 4.5,
+        "brand": "Ring",
+        "release_date": "2023-02-18"
+    },
+    {
+        "product_id": 103,
+        "product_title": "Smart Security Camera",
+        "product_image": "https://i.ibb.co.com/ccyNXxy/Smart-Security-Camera-2.jpg",
+        "category": "Smart Home",
+        "price": 129.99,
+        "description": "AI-powered security camera for your home.",
+        "specifications": [
+            "Night vision",
+            "Cloud storage",
+            "360-degree rotation"
+        ],
+        "availability": true,
+        "rating": 4.6,
+        "brand": "SecureCam",
+        "release_date": "2022-11-25"
+    },
+    {
+        "product_id": 104,
+        "product_title": "Smart Light Bulb",
+        "product_image": "https://i.ibb.co.com/9hnY5kY/Smart-Speaker.jpg",
+        "category": "Smart Home",
+        "price": 24.99,
+        "description": "Customizable and energy-efficient smart lighting.",
+        "specifications": [
+            "16 million colors",
+            "Dimmable via app",
+            "Energy Star certified"
+        ],
+        "availability": true,
+        "rating": 4.8,
+        "brand": "HueLight",
+        "release_date": "2023-07-15"
+    },
+    {
+        "product_id": 105,
+        "product_title": "Smart Lock",
+        "product_image": "https://i.ibb.co.com/LpZVyVy/Smart-Lock.jpg",
+        "category": "Smart Home",
+        "price": 179.99,
+        "description": "Secure keyless entry for your home.",
+        "specifications": [
+            "Bluetooth and Wi-Fi enabled",
+            "Fingerprint reader",
+            "Auto-lock feature"
+        ],
+        "availability": true,
+        "rating": 4.7,
+        "brand": "KeySecure",
+        "release_date": "2023-01-20"
+    },
+    {
+        "product_id": 106,
+        "product_title": "Smart Speaker",
+        "product_image": "https://i.ibb.co.com/m4z9T1F/Smart-Light-Bulb.jpg",
+        "category": "Smart Home",
+        "price": 99.99,
+        "description": "Voice-controlled smart speaker for home automation.",
+        "specifications": [
+            "Built-in Alexa",
+            "Hi-Fi audio",
+            "Multi-room music"
+        ],
+        "availability": true,
+        "rating": 4.6,
+        "brand": "SoundAI",
+        "release_date": "2023-03-30"
+    }
+]

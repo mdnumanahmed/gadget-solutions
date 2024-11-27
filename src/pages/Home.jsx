@@ -1,3 +1,4 @@
+import CategorizedItems from "../components/CategorizedItems/CategorizedItems";
 import FeaturedImage from "../components/FeaturedImage";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
@@ -11,8 +12,15 @@ const Home = () => {
           <Hero />
         </div>
       </div>
+      {/* Featured Image */}
       <div className="container mx-auto -mt-72 mb-10">
         <FeaturedImage />
+      </div>
+      {/* Display All Categorized Items */}
+      <div>
+        <div className="container mx-auto py-24">
+          <CategorizedItems />
+        </div>
       </div>
     </div>
   );
