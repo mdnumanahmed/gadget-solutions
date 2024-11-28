@@ -11,7 +11,7 @@ const ProductCard = ({ product, loadProductDetails }) => {
       />
       <div className="space-y-4">
         <h3 className="text-2xl font-semibold text-[#09080F]">
-          {product_title}C
+          {product_title}
         </h3>
         <p className="text-xl font-medium text-[#09080F]/80">
           Price: ${price}{" "}

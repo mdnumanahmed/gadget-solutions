@@ -22,7 +22,6 @@ const ProductDetails = () => {
     release_date,
     specifications,
   } = product;
-  console.log(product);
 
   const handleAddToCart = (id) => {
     id && saveToLocalStorage(id, "cart");
