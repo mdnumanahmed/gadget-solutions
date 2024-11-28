@@ -1,11 +1,39 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import PageTitle from "../components/PageTitle";
 import HeroImg from "../assets/banner.jpg";
 import { BiStar } from "react-icons/bi";
-import { FaRegHeart } from "react-icons/fa";
+import {
+  FaRegHeart,
+  FaRegStar,
+  FaRegStarHalf,
+  FaStarHalfAlt,
+} from "react-icons/fa";
 import { GrCart } from "react-icons/gr";
+import { DataContext } from "../providers/DataProvider";
+import { FaStar } from "react-icons/fa6";
+import ReactStars from "react-rating-stars-component";
 
 const ProductDetails = () => {
+  const { product } = useContext(DataContext);
+  const {
+    availability,
+    brand,
+    category,
+    description,
+    price,
+    product_id,
+    product_image,
+    product_title,
+    rating,
+    release_date,
+    specifications,
+  } = product;
+  console.log(product);
+
+  //   const ratingChanged = (newRating) => {
+  //     console.log(newRating);
+  //   };
+
   return (
     <div>
       <div className="">
@@ -20,39 +48,47 @@ const ProductDetails = () => {
       <div className="container mx-auto pb-24 -mt-56">
         <div className="rounded-3xl p-8 grid grid-cols-1 lg:grid-cols-3 gap-8 bg-white">
           <div>
-            <img src={HeroImg} alt="" className="rounded-3xl" />
+            <img src={product_image} alt="" className="rounded-3xl w-full" />
           </div>
           <div className="col-span-2 space-y-5">
             <h2 className="text-3xl font-semibold text-[#09080F]">
-              Samsung Galaxy S23 Ultra
+              {product_title}
             </h2>
             <h3 className="text-xl font-semibold text-[#09080F]/80">
-              Price: $ 999.99
+              Price: $ {price}
             </h3>
             <button className="btn btn-outline btn-sm rounded-full text-[#309C08] bg-[#309C08]/10">
-              In Stock
+              {availability ? "In Stock" : "Out of Stock"}
             </button>
-            <p className="text-lg">
-              Ultra-slim, high-performance laptop with 13.4-inch Infinity Edge
-              display.
-            </p>
+            <p className="text-lg">{description}</p>
             <div className="space-y-3">
               <h4 className="text-lg font-semibold text-[#09080F]">
                 Specification
               </h4>
-              <ol>
-                <li>Intel i7 11th Gen </li>
-                <li>16GB RAM </li>
-                <li>512GB SSD </li>
-                <li>Touchscreen</li>
+              <ol className="list-decimal ml-6">
+                {specifications?.map((item, idx) => (
+                  <li key={idx}>{item} </li>
+                ))}
               </ol>
             </div>
             <div>
               <h4 className="text-lg font-semibold text-[#09080F] flex gap-2 items-center">
                 Ratings <BiStar />
               </h4>
-              <div className="flex gap-2">
-                <BiStar /> <BiStar /> <BiStar /> <BiStar /> <BiStar /> 4.8
+              <div className="flex gap-2 items-center">
+                <ReactStars
+                  count={5}
+                  //   onChange={ratingChanged}
+                  value={rating}
+                  size={24}
+                  isHalf={true}
+                  edit={false}
+                  emptyIcon={<FaRegStar />}
+                  halfIcon={<FaRegStarHalf />}
+                  fullIcon={<FaStar />}
+                  activeColor="#ffd700"
+                />
+                || {rating}
               </div>
             </div>
             <div className="flex gap-6 items-center">

@@ -5,6 +5,7 @@ export const DataContext = createContext(null);
 const DataProvider = ({ children }) => {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
+  const [product, setProduct] = useState({});
 
   useEffect(() => {
     const loadData = async () => {
@@ -18,9 +19,18 @@ const DataProvider = ({ children }) => {
     loadData();
   }, []);
 
+  const loadProductDetails = (id) => {
+    const foundedProduct = products.find(
+      (product) => product.product_id === id
+    );
+    setProduct(foundedProduct);
+  };
+
   const values = {
     categories,
     products,
+    product,
+    loadProductDetails,
   };
   return <DataContext.Provider value={values}>{children}</DataContext.Provider>;
 };
