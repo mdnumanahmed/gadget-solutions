@@ -1,17 +1,11 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import PageTitle from "../components/PageTitle";
-import HeroImg from "../assets/banner.jpg";
 import { BiStar } from "react-icons/bi";
-import {
-  FaRegHeart,
-  FaRegStar,
-  FaRegStarHalf,
-  FaStarHalfAlt,
-} from "react-icons/fa";
+import { FaRegHeart, FaStar, FaRegStar, FaRegStarHalf } from "react-icons/fa";
 import { GrCart } from "react-icons/gr";
 import { DataContext } from "../providers/DataProvider";
-import { FaStar } from "react-icons/fa6";
 import ReactStars from "react-rating-stars-component";
+import { saveToLocalStorage } from "../utils/saveToDb";
 
 const ProductDetails = () => {
   const { product } = useContext(DataContext);
@@ -29,6 +23,16 @@ const ProductDetails = () => {
     specifications,
   } = product;
   console.log(product);
+
+  const handleAddToCart = (id) => {
+    id && saveToLocalStorage(id, "cart");
+  };
+
+  const handleAddToWishlist = (id, e) => {
+    id && saveToLocalStorage(id, "wishlist");
+    console.log(e.target);
+    e.target.setAttribute("disabled", true);
+  };
 
   //   const ratingChanged = (newRating) => {
   //     console.log(newRating);
@@ -93,13 +97,17 @@ const ProductDetails = () => {
             </div>
             <div className="flex gap-6 items-center">
               <button
+                onClick={() => handleAddToCart(product_id)}
                 type="button"
-                className="px-8 py-3 text-lg font-semibold rounded-3xl text-white bg-purple-600 hover:bg-white hover:border-white hover:text-purple-600 flex gap-3"
+                className="px-8 py-3 text-lg font-semibold rounded-3xl text-white bg-purple-600 hover:bg-gray-200 hover:border-white hover:text-purple-600 flex gap-3"
               >
                 Add To Card <GrCart className="text-2xl" />
               </button>
-              <button className="btn btn-outline bg-white border-2 btn-circle hover:bg-purple-600 hover:border-white hover:text-white dark:bg-purple-600">
-                <FaRegHeart className="text-2xl" />
+              <button
+                onClick={(e) => handleAddToWishlist(product_id, e)}
+                className="btn btn-outline bg-white border-2 btn-circle hover:bg-purple-600 hover:border-white hover:text-white dark:bg-purple-600"
+              >
+                <FaRegHeart className="text-2xl pointer-events-none" />
               </button>
             </div>
           </div>
