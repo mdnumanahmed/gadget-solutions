@@ -3,12 +3,20 @@ import PageTitle from "../components/PageTitle";
 import SelectedProductList from "../components/SelectedProductList";
 import { DataContext } from "../providers/DataProvider";
 import { PiSlidersLight } from "react-icons/pi";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
-  const { cartItems, wishlists, activeTab, setActiveTab } =
-    useContext(DataContext);
+  const {
+    cartItems,
+    wishlists,
+    activeTab,
+    setActiveTab,
+    handleSorting,
+    handlePurchase,
+  } = useContext(DataContext);
 
-  console.log(cartItems, wishlists, activeTab);
+  const navigate = useNavigate();
+
   return (
     <div>
       <PageTitle
@@ -18,18 +26,28 @@ const Dashboard = () => {
         }
       >
         <div className="space-x-6">
-          <button
-            onClick={() => setActiveTab("cart")}
-            className="border-2 border-white text-white px-16 py-3 m-2 text-lg font-semibold rounded-3xl hover:bg-white hover:text-purple-600"
-          >
-            Cart
-          </button>
-          <button
-            onClick={() => setActiveTab("wishlist")}
-            className="border-2 border-white text-white px-16 py-3 m-2 text-lg font-semibold rounded-3xl hover:bg-white hover:text-purple-600"
-          >
-            Wishlist
-          </button>
+          <NavLink to={"/dashboard/cart-items"}>
+            <button
+              onClick={() => setActiveTab("cart")}
+              className={`${
+                activeTab === "cart" ? "bg-white text-purple-600" : "text-white"
+              } border-2 border-white  px-16 py-3 m-2 text-lg font-semibold rounded-3xl hover:bg-white hover:text-purple-600`}
+            >
+              Cart
+            </button>
+          </NavLink>
+          <NavLink to={"/dashboard/wishlist-items"}>
+            <button
+              onClick={() => setActiveTab("wishlist")}
+              className={`${
+                activeTab === "wishlist"
+                  ? "bg-white text-purple-600"
+                  : "text-white"
+              } border-2 border-white  px-16 py-3 m-2 text-lg font-semibold rounded-3xl hover:bg-white hover:text-purple-600`}
+            >
+              Wishlist
+            </button>
+          </NavLink>
         </div>
       </PageTitle>
       <div>
@@ -38,12 +56,23 @@ const Dashboard = () => {
           <div className="flex items-center gap-6">
             <h3 className="text-2xl font-bold">
               Total cost: ${" "}
-              {cartItems.reduce((acc, current) => acc + current.price, 0)}
+              {cartItems?.reduce((acc, current) => acc + current.price, 0) || 0}
             </h3>
-            <button className="flex items-center gap-3 btn btn-outline rounded-3xl text-lg font-semibold text-purple-600 border-2 border-purple-600 hover:bg-purple-600">
+            <button
+              onClick={handleSorting}
+              className="flex items-center gap-3 btn btn-outline rounded-3xl text-lg font-semibold text-purple-600 border-2 border-purple-600 hover:bg-purple-600"
+            >
               Sort By Price <PiSlidersLight />{" "}
             </button>
-            <button className="btn btn-outline rounded-3xl text-lg font-semibold text-purple-600 border-2 border-purple-600 hover:bg-purple-600">
+            <button
+              onClick={() => handlePurchase(navigate)}
+              disabled={
+                !cartItems.length ||
+                cartItems?.reduce((acc, current) => acc + current.price, 0) ===
+                  0
+              }
+              className="btn btn-outline rounded-3xl text-lg font-semibold text-white border-2 border-purple-600 bg-purple-600 hover:text-purple-600 hover:bg-white"
+            >
               Purchase
             </button>
           </div>
@@ -51,7 +80,7 @@ const Dashboard = () => {
         {activeTab === "cart" ? (
           <SelectedProductList selectedItems={cartItems} />
         ) : (
-          <SelectedProductList selectedItems={wishlists} />
+          <SelectedProductList selectedItems={wishlists} hasBtn={true} />
         )}
       </div>
     </div>

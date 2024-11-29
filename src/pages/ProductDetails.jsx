@@ -29,7 +29,6 @@ const ProductDetails = () => {
 
   const handleAddToWishlist = (id, e) => {
     id && saveToLocalStorage(id, "wishlist");
-    console.log(e.target);
     e.target.setAttribute("disabled", true);
   };
 

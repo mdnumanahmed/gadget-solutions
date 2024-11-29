@@ -1,6 +1,6 @@
-const sortBooks = (books, field) => {
-  if (!field) return books;
-  return [...books].sort((a, b) => (a[field] > b[field] ? -1 : 1));
+const sortProducts = (products, field) => {
+  if (!field) return products;
+  return [...products].sort((a, b) => (a[field] > b[field] ? -1 : 1));
 };
 
 // Sort the Book List Dynamically
@@ -14,4 +14,4 @@ export const sortAnyArrayOfObject = (books, field) => {
   });
 };
 
-export default sortBooks;
+export default sortProducts;

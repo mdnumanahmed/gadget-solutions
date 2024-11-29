@@ -1,5 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { getStoredData } from "../utils/saveToDb";
+import sortProducts from "../utils/sortProducts";
+import Swal from "sweetalert2";
 
 export const DataContext = createContext(null);
 
@@ -7,9 +9,10 @@ const DataProvider = ({ children }) => {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
   const [product, setProduct] = useState({});
-  const [activeTab, setActiveTab] = useState("cart");
+  const [activeTab, setActiveTab] = useState("");
   const [cartItems, setCartItems] = useState([]);
   const [wishlists, setWishlists] = useState([]);
+  const [sortBy, setSortBy] = useState("price");
 
   useEffect(() => {
     const loadData = async () => {
@@ -28,6 +31,30 @@ const DataProvider = ({ children }) => {
       (product) => product.product_id === id
     );
     setProduct(foundedProduct);
+  };
+
+  const handleSorting = () => {
+    if (activeTab === "cart") {
+      const products = sortProducts(cartItems, sortBy);
+      setCartItems(products);
+    } else if (activeTab === "wishlist") {
+      const products = sortProducts(wishlists, sortBy);
+      setWishlists(products);
+    }
+  };
+
+  const handlePurchase = (navigate) => {
+    Swal.fire({
+      title: "Payment Successfully!",
+      text: "Thank you for purchasing!",
+      icon: "success",
+      confirmButtonText: "Close",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        localStorage.removeItem("cart");
+        navigate("/");
+      }
+    });
   };
 
   useEffect(() => {
@@ -54,6 +81,8 @@ const DataProvider = ({ children }) => {
     wishlists,
     activeTab,
     setActiveTab,
+    handleSorting,
+    handlePurchase,
     loadProductDetails,
   };
   return <DataContext.Provider value={values}>{children}</DataContext.Provider>;

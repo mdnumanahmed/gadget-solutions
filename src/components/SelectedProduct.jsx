@@ -3,8 +3,9 @@ import { FaRegHeart, FaRegStar, FaRegStarHalf, FaStar } from "react-icons/fa";
 import { GrCart } from "react-icons/gr";
 import { IoCloseOutline } from "react-icons/io5";
 import ReactStars from "react-rating-stars-component";
+import { saveToLocalStorage } from "../utils/saveToDb";
 
-const SelectedProduct = ({ product }) => {
+const SelectedProduct = ({ product, hasBtn }) => {
   const {
     availability,
     brand,
@@ -18,6 +19,11 @@ const SelectedProduct = ({ product }) => {
     release_date,
     specifications,
   } = product;
+
+  const handleAddToCart = (id) => {
+    id && saveToLocalStorage(id, "cart");
+  };
+
   return (
     <div className="container mx-auto my-10">
       <div className="rounded-3xl p-8 grid grid-cols-1 lg:grid-cols-4 gap-8 bg-white">
@@ -58,6 +64,15 @@ const SelectedProduct = ({ product }) => {
               </div>
             </div>
           </div>
+          {hasBtn && (
+            <button
+              onClick={() => handleAddToCart(product_id)}
+              type="button"
+              className="px-8 py-3 text-lg font-semibold rounded-3xl text-white bg-purple-600 hover:bg-gray-200 hover:border-white hover:text-purple-600 flex gap-3"
+            >
+              Add To Card <GrCart className="text-2xl" />
+            </button>
+          )}
         </div>
         <div className="flex gap-6 items-center justify-end pr-6">
           <button className="btn btn-outline bg-white border-2 btn-circle hover:bg-purple-600 hover:border-white hover:text-white dark:bg-purple-600">
