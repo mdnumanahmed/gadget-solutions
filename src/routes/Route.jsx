@@ -5,6 +5,7 @@ import ProductDetails from "../pages/ProductDetails";
 import ErrorPage from "../pages/ErrorPage";
 import Dashboard from "../pages/Dashboard";
 import SelectedProductList from "../components/SelectedProductList";
+import Statistics from "../pages/Statistics";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
             element: <SelectedProductList />,
           },
         ],
+      },
+      {
+        path: "/statistics",
+        element: <Statistics />,
       },
     ],
   },

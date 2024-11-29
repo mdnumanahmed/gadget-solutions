@@ -2,8 +2,8 @@ import footerLogo from "../assets/logo/logo_top_img.png";
 
 const Footer = () => {
   return (
-    <div>
-      <footer className="footer footer-center bg-white p-10">
+    <div className="bg-white">
+      <footer className="footer footer-center  p-10">
         <aside>
           <img src={footerLogo} alt="" className="max-w-80" />
         </aside>
