@@ -76,4 +76,14 @@ const saveToLocalStorage = (id, key) => {
   }
 };
 
-export { saveToLocalStorage, getStoredData };
+const deleteFromStorage = (id) => {
+  let storedIds = getStoredData("cart");
+  const exists = storedIds.includes(id);
+  if (exists) {
+    storedIds = storedIds.filter((storedId) => storedId !== id);
+    localStorage.setItem("cart", JSON.stringify(storedIds));
+    return;
+  }
+};
+
+export { saveToLocalStorage, getStoredData, deleteFromStorage };

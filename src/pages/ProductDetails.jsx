@@ -5,8 +5,6 @@ import { FaRegHeart, FaStar, FaRegStar, FaRegStarHalf } from "react-icons/fa";
 import { GrCart } from "react-icons/gr";
 import { DataContext } from "../providers/DataProvider";
 import ReactStars from "react-rating-stars-component";
-import { saveToLocalStorage } from "../utils/saveToDb";
-import toast from "react-hot-toast";
 
 const ProductDetails = () => {
   const { product, handleAddToCart, handleAddToWishlist } =

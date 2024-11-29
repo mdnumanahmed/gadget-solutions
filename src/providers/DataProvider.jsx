@@ -1,5 +1,9 @@
 import { createContext, useEffect, useState } from "react";
-import { getStoredData, saveToLocalStorage } from "../utils/saveToDb";
+import {
+  deleteFromStorage,
+  getStoredData,
+  saveToLocalStorage,
+} from "../utils/saveToDb";
 import sortProducts from "../utils/sortProducts";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
@@ -34,7 +38,7 @@ const DataProvider = ({ children }) => {
     setProduct(foundedProduct);
   };
 
-  const handleAddToCart = (id) => {
+  const handleAddToCart = (product) => {
     const totalPrice = cartItems.reduce(
       (acc, current) => acc + current.price,
       0
@@ -45,9 +49,18 @@ const DataProvider = ({ children }) => {
       return toast.error("You have reached your limit.");
     }
     // added item to the localStorage for persist cartItems
-    id && saveToLocalStorage(id, "cart");
+    saveToLocalStorage(product.product_id, "cart");
 
     // to get instant updated cartItems without reload
+    const storedIds = getStoredData("cart");
+    const addedCart = products.filter((pd) =>
+      storedIds.includes(pd.product_id)
+    );
+    setCartItems(addedCart);
+  };
+
+  const handleRemoveCartItem = (id) => {
+    deleteFromStorage(id);
     const storedIds = getStoredData("cart");
     const addedCart = products.filter((pd) =>
       storedIds.includes(pd.product_id)
@@ -114,6 +127,7 @@ const DataProvider = ({ children }) => {
     setActiveTab,
     handleAddToCart,
     handleAddToWishlist,
+    handleRemoveCartItem,
     handleSorting,
     handlePurchase,
     loadProductDetails,

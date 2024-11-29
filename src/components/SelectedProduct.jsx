@@ -3,12 +3,13 @@ import { FaRegStar, FaRegStarHalf, FaStar } from "react-icons/fa";
 import { GrCart } from "react-icons/gr";
 import { IoCloseOutline } from "react-icons/io5";
 import ReactStars from "react-rating-stars-component";
-import { saveToLocalStorage } from "../utils/saveToDb";
-import { useContext } from "react";
-import { DataContext } from "../providers/DataProvider";
 
-const SelectedProduct = ({ product, hasBtn }) => {
-  const { handleAddToCart, handleRemoveCartItem } = useContext(DataContext);
+const SelectedProduct = ({
+  product,
+  hasBtn,
+  handleAddToCart,
+  handleRemoveCartItem,
+}) => {
   const {
     availability,
     brand,
@@ -65,7 +66,7 @@ const SelectedProduct = ({ product, hasBtn }) => {
           </div>
           {hasBtn && (
             <button
-              onClick={() => handleAddToCart(product_id)}
+              onClick={() => handleAddToCart(product)}
               type="button"
               className="px-8 py-3 text-lg font-semibold rounded-3xl text-white bg-purple-600 hover:bg-gray-200 hover:border-white hover:text-purple-600 flex gap-3"
             >

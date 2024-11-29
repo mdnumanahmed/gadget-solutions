@@ -13,6 +13,8 @@ const Dashboard = () => {
     setActiveTab,
     handleSorting,
     handlePurchase,
+    handleAddToCart,
+    handleRemoveCartItem,
   } = useContext(DataContext);
 
   const totalPrice = cartItems?.reduce(
@@ -83,9 +85,16 @@ const Dashboard = () => {
           )}
         </div>
         {activeTab === "cart" ? (
-          <SelectedProductList selectedItems={cartItems} />
+          <SelectedProductList
+            selectedItems={cartItems}
+            handleRemoveCartItem={handleRemoveCartItem}
+          />
         ) : (
-          <SelectedProductList selectedItems={wishlists} hasBtn={true} />
+          <SelectedProductList
+            selectedItems={wishlists}
+            hasBtn={true}
+            handleAddToCart={handleAddToCart}
+          />
         )}
       </div>
     </div>
