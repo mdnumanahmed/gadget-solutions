@@ -1,11 +1,14 @@
 import { BiStar } from "react-icons/bi";
-import { FaRegHeart, FaRegStar, FaRegStarHalf, FaStar } from "react-icons/fa";
+import { FaRegStar, FaRegStarHalf, FaStar } from "react-icons/fa";
 import { GrCart } from "react-icons/gr";
 import { IoCloseOutline } from "react-icons/io5";
 import ReactStars from "react-rating-stars-component";
 import { saveToLocalStorage } from "../utils/saveToDb";
+import { useContext } from "react";
+import { DataContext } from "../providers/DataProvider";
 
 const SelectedProduct = ({ product, hasBtn }) => {
+  const { handleAddToCart, handleRemoveCartItem } = useContext(DataContext);
   const {
     availability,
     brand,
@@ -19,10 +22,6 @@ const SelectedProduct = ({ product, hasBtn }) => {
     release_date,
     specifications,
   } = product;
-
-  const handleAddToCart = (id) => {
-    id && saveToLocalStorage(id, "cart");
-  };
 
   return (
     <div className="container mx-auto my-10">
@@ -75,7 +74,10 @@ const SelectedProduct = ({ product, hasBtn }) => {
           )}
         </div>
         <div className="flex gap-6 items-center justify-end pr-6">
-          <button className="btn btn-outline bg-white border-2 btn-circle hover:bg-purple-600 hover:border-white hover:text-white dark:bg-purple-600">
+          <button
+            onClick={() => handleRemoveCartItem(product_id)}
+            className="btn btn-outline bg-white border-2 btn-circle hover:bg-purple-600 hover:border-white hover:text-white dark:bg-purple-600"
+          >
             <IoCloseOutline className="text-3xl pointer-events-none" />
           </button>
         </div>

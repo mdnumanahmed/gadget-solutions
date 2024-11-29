@@ -15,6 +15,10 @@ const Dashboard = () => {
     handlePurchase,
   } = useContext(DataContext);
 
+  const totalPrice = cartItems?.reduce(
+    (acc, current) => acc + current.price,
+    0
+  );
   const navigate = useNavigate();
 
   return (
@@ -52,30 +56,31 @@ const Dashboard = () => {
       </PageTitle>
       <div>
         <div className="container mx-auto flex justify-between pt-12">
-          <h3 className="text-2xl font-bold">Cart</h3>
-          <div className="flex items-center gap-6">
-            <h3 className="text-2xl font-bold">
-              Total cost: ${" "}
-              {cartItems?.reduce((acc, current) => acc + current.price, 0) || 0}
-            </h3>
-            <button
-              onClick={handleSorting}
-              className="flex items-center gap-3 btn btn-outline rounded-3xl text-lg font-semibold text-purple-600 border-2 border-purple-600 hover:bg-purple-600"
-            >
-              Sort By Price <PiSlidersLight />{" "}
-            </button>
-            <button
-              onClick={() => handlePurchase(navigate)}
-              disabled={
-                !cartItems.length ||
-                cartItems?.reduce((acc, current) => acc + current.price, 0) ===
-                  0
-              }
-              className="btn btn-outline rounded-3xl text-lg font-semibold text-white border-2 border-purple-600 bg-purple-600 hover:text-purple-600 hover:bg-white"
-            >
-              Purchase
-            </button>
-          </div>
+          <h3 className="text-2xl font-bold">
+            {activeTab === "cart"
+              ? "Cart"
+              : activeTab === "wishlist" && "Wishlist"}
+          </h3>
+          {activeTab === "cart" && (
+            <div className="flex items-center gap-6">
+              <h3 className="text-2xl font-bold">
+                Total cost: $ {+totalPrice.toFixed(2) || 0}
+              </h3>
+              <button
+                onClick={handleSorting}
+                className="flex items-center gap-3 btn btn-outline rounded-3xl text-lg font-semibold text-purple-600 border-2 border-purple-600 hover:bg-purple-600"
+              >
+                Sort By Price <PiSlidersLight />{" "}
+              </button>
+              <button
+                onClick={() => handlePurchase(navigate)}
+                disabled={!cartItems.length || totalPrice === 0}
+                className="btn btn-outline rounded-3xl text-lg font-semibold text-white border-2 border-purple-600 bg-purple-600 hover:text-purple-600 hover:bg-white"
+              >
+                Purchase
+              </button>
+            </div>
+          )}
         </div>
         {activeTab === "cart" ? (
           <SelectedProductList selectedItems={cartItems} />

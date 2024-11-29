@@ -6,9 +6,11 @@ import { GrCart } from "react-icons/gr";
 import { DataContext } from "../providers/DataProvider";
 import ReactStars from "react-rating-stars-component";
 import { saveToLocalStorage } from "../utils/saveToDb";
+import toast from "react-hot-toast";
 
 const ProductDetails = () => {
-  const { product } = useContext(DataContext);
+  const { product, handleAddToCart, handleAddToWishlist } =
+    useContext(DataContext);
   const {
     availability,
     brand,
@@ -22,15 +24,6 @@ const ProductDetails = () => {
     release_date,
     specifications,
   } = product;
-
-  const handleAddToCart = (id) => {
-    id && saveToLocalStorage(id, "cart");
-  };
-
-  const handleAddToWishlist = (id, e) => {
-    id && saveToLocalStorage(id, "wishlist");
-    e.target.setAttribute("disabled", true);
-  };
 
   //   const ratingChanged = (newRating) => {
   //     console.log(newRating);

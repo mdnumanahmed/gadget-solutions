@@ -1,7 +1,8 @@
 import { createContext, useEffect, useState } from "react";
-import { getStoredData } from "../utils/saveToDb";
+import { getStoredData, saveToLocalStorage } from "../utils/saveToDb";
 import sortProducts from "../utils/sortProducts";
 import Swal from "sweetalert2";
+import toast from "react-hot-toast";
 
 export const DataContext = createContext(null);
 
@@ -33,6 +34,33 @@ const DataProvider = ({ children }) => {
     setProduct(foundedProduct);
   };
 
+  const handleAddToCart = (id) => {
+    const totalPrice = cartItems.reduce(
+      (acc, current) => acc + current.price,
+      0
+    );
+    const latestTotalPrice = totalPrice + product.price;
+    // Limit adding items to the cart after reaching a maximum (inclusive) 1000 $
+    if (latestTotalPrice > 1000) {
+      return toast.error("You have reached your limit.");
+    }
+    // added item to the localStorage for persist cartItems
+    id && saveToLocalStorage(id, "cart");
+
+    // to get instant updated cartItems without reload
+    const storedIds = getStoredData("cart");
+    const addedCart = products.filter((pd) =>
+      storedIds.includes(pd.product_id)
+    );
+    setCartItems(addedCart);
+  };
+
+  const handleAddToWishlist = (id, e) => {
+    id && saveToLocalStorage(id, "wishlist");
+    // disable button after click once
+    e.target.setAttribute("disabled", true);
+  };
+
   const handleSorting = () => {
     if (activeTab === "cart") {
       const products = sortProducts(cartItems, sortBy);
@@ -51,8 +79,11 @@ const DataProvider = ({ children }) => {
       confirmButtonText: "Close",
     }).then((result) => {
       if (result.isConfirmed) {
+        // to remove cart items form the localStorage.
         localStorage.removeItem("cart");
         navigate("/");
+        // to remove cart items from the UI without reload
+        setCartItems(getStoredData("cart"));
       }
     });
   };
@@ -81,6 +112,8 @@ const DataProvider = ({ children }) => {
     wishlists,
     activeTab,
     setActiveTab,
+    handleAddToCart,
+    handleAddToWishlist,
     handleSorting,
     handlePurchase,
     loadProductDetails,

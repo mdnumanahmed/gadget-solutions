@@ -4,7 +4,7 @@
         "product_title": "Smart Thermostat",
         "product_image": "https://i.ibb.co.com/4TyWYyd/Smart-Thermostat.jpg",
         "category": "Smart Home",
-        "price": 199.99,
+        "price": 399.99,
         "description": "Control your home's temperature remotely and save energy.",
         "specifications": [
             "Wi-Fi enabled",
@@ -21,7 +21,7 @@
         "product_title": "Smart Doorbell",
         "product_image": "https://i.ibb.co.com/TMWYBMJ/Smart-Doorbell.jpg",
         "category": "Smart Home",
-        "price": 149.99,
+        "price": 349.99,
         "description": "See and talk to visitors at your door from anywhere.",
         "specifications": [
             "1080p HD video",
@@ -38,7 +38,7 @@
         "product_title": "Smart Security Camera",
         "product_image": "https://i.ibb.co.com/ccyNXxy/Smart-Security-Camera-2.jpg",
         "category": "Smart Home",
-        "price": 129.99,
+        "price": 329.99,
         "description": "AI-powered security camera for your home.",
         "specifications": [
             "Night vision",
@@ -55,7 +55,7 @@
         "product_title": "Smart Light Bulb",
         "product_image": "https://i.ibb.co.com/9hnY5kY/Smart-Speaker.jpg",
         "category": "Smart Home",
-        "price": 24.99,
+        "price": 424.99,
         "description": "Customizable and energy-efficient smart lighting.",
         "specifications": [
             "16 million colors",
@@ -72,7 +72,7 @@
         "product_title": "Smart Lock",
         "product_image": "https://i.ibb.co.com/LpZVyVy/Smart-Lock.jpg",
         "category": "Smart Home",
-        "price": 179.99,
+        "price": 579.99,
         "description": "Secure keyless entry for your home.",
         "specifications": [
             "Bluetooth and Wi-Fi enabled",
@@ -89,7 +89,7 @@
         "product_title": "Smart Speaker",
         "product_image": "https://i.ibb.co.com/m4z9T1F/Smart-Light-Bulb.jpg",
         "category": "Smart Home",
-        "price": 99.99,
+        "price": 399.99,
         "description": "Voice-controlled smart speaker for home automation.",
         "specifications": [
             "Built-in Alexa",
