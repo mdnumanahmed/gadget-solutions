@@ -1,12 +1,38 @@
 import { Link } from "react-router-dom";
 import SocialLogin from "../components/SocialLogin";
+import { useContext } from "react";
+import { AuthContext } from "../providers/AuthProvider";
+import { Result } from "postcss";
 
 const Register = () => {
+  const { createUser } = useContext(AuthContext);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const form = new FormData(e.currentTarget);
+    const name = form.get("name");
+    const photo = form.get("photo");
+    const email = form.get("email");
+    const password = form.get("password");
+
+    console.log(name, photo, email, password);
+
+    // Create User with email and password
+    createUser(email, password)
+      .then((result) => {
+        const createdUser = result.user;
+        console.log(createdUser);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <div className="container mx-auto flex justify-center py-10">
       <div className="w-full max-w-md p-8 space-y-3 rounded-xl text-purple-950 bg-purple-100 dark:bg-gray-50 dark:text-gray-800">
         <h1 className="text-2xl font-bold text-center">Register</h1>
-        <form className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-1 text-sm">
             <label htmlFor="name" className="block dark:text-gray-600">
               Your Name
