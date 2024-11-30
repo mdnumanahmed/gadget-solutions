@@ -5,7 +5,7 @@ import { AuthContext } from "../providers/AuthProvider";
 import { Result } from "postcss";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateUserData } = useContext(AuthContext);
   const handleRegister = (e) => {
     e.preventDefault();
 
@@ -21,6 +21,15 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         const createdUser = result.user;
+
+        // update profile
+        updateUserData(createdUser, name, photo)
+          .then(() => {
+            console.log("updated", name, photo);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
         console.log(createdUser);
       })
       .catch((error) => {
