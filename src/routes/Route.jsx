@@ -6,6 +6,7 @@ import ErrorPage from "../pages/ErrorPage";
 import Dashboard from "../pages/Dashboard";
 import SelectedProductList from "../components/SelectedProductList";
 import Statistics from "../pages/Statistics";
+import Register from "../pages/Register";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: "/statistics",
         element: <Statistics />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
       },
     ],
   },

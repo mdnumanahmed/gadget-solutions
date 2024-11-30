@@ -3,8 +3,10 @@ import navbarLogo from "../assets/logo/logo_img.png";
 import { GrCart } from "react-icons/gr";
 import { FaRegHeart } from "react-icons/fa";
 import { useEffect, useState } from "react";
+// import { DataConnect } from "firebase/data-connect";
 
 const Navbar = () => {
+  // const { cartItems, wishlists } = useContext(DataConnect);
   const [theme, setTheme] = useState("");
 
   const handleTheme = () => {
@@ -112,18 +114,22 @@ const Navbar = () => {
               </div>
             </div>
             {/* Login logout */}
-            <button
-              type="button"
-              className="hidden px-6 py-2 font-semibold bg-white text-purple-600 border rounded-2xl lg:block dark:bg-purple-600 dark:text-gray-50 hover:bg-purple-600 hover:text-white"
-            >
-              Log in
-            </button>
-            <button
-              type="button"
-              className="hidden px-6 py-2 font-semibold border bg-white text-purple-600 rounded-2xl lg:block dark:bg-purple-600 dark:text-gray-50 hover:bg-purple-600 hover:text-white"
-            >
-              Log Out
-            </button>
+            <Link to={"/login"}>
+              <button
+                type="button"
+                className="hidden px-6 py-2 font-semibold bg-white text-purple-600 border rounded-2xl lg:block dark:bg-purple-600 dark:text-gray-50 hover:bg-purple-600 hover:text-white"
+              >
+                Log in
+              </button>
+            </Link>
+            <Link to={"/register"}>
+              <button
+                type="button"
+                className="hidden px-6 py-2 font-semibold border bg-white text-purple-600 rounded-2xl lg:block dark:bg-purple-600 dark:text-gray-50 hover:bg-purple-600 hover:text-white"
+              >
+                Log Out
+              </button>
+            </Link>
 
             {/* Theme Controller */}
             <label className="grid cursor-pointer place-items-center">
