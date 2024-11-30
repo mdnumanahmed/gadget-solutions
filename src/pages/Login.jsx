@@ -1,13 +1,34 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import SocialLogin from "../components/SocialLogin";
+import { AuthContext } from "../providers/AuthProvider";
 
 const Login = () => {
+  const { signInUser } = useContext(AuthContext);
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    const form = new FormData(e.currentTarget);
+
+    const email = form.get("email");
+    const password = form.get("password");
+
+    signInUser(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <div className="container mx-auto flex justify-center py-10">
       <div className="w-full max-w-md p-8 space-y-3 rounded-xl text-purple-950 bg-purple-100 dark:bg-gray-50 dark:text-gray-800">
         <h1 className="text-2xl font-bold text-center">Login</h1>
-        <form className="space-y-6">
+        <form onSubmit={handleLogin} className="space-y-6">
           <div className="space-y-1 text-sm">
             <label htmlFor="email" className="block dark:text-gray-600">
               Email

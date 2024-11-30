@@ -6,7 +6,7 @@ import { Result } from "postcss";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
-  const handleSubmit = (e) => {
+  const handleRegister = (e) => {
     e.preventDefault();
 
     const form = new FormData(e.currentTarget);
@@ -32,7 +32,7 @@ const Register = () => {
     <div className="container mx-auto flex justify-center py-10">
       <div className="w-full max-w-md p-8 space-y-3 rounded-xl text-purple-950 bg-purple-100 dark:bg-gray-50 dark:text-gray-800">
         <h1 className="text-2xl font-bold text-center">Register</h1>
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleRegister} className="space-y-6">
           <div className="space-y-1 text-sm">
             <label htmlFor="name" className="block dark:text-gray-600">
               Your Name
