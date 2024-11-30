@@ -8,6 +8,8 @@ import SelectedProductList from "../components/SelectedProductList";
 import Statistics from "../pages/Statistics";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
+import Profile from "../pages/Profile";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -48,6 +50,14 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/profile",
+        element: (
+          <PrivateRoute>
+            <Profile />
+          </PrivateRoute>
+        ),
       },
     ],
   },
