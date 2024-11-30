@@ -1,36 +1,13 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import SocialLogin from "../components/SocialLogin";
 
-const Register = () => {
+const Login = () => {
   return (
     <div className="container mx-auto flex justify-center py-10">
       <div className="w-full max-w-md p-8 space-y-3 rounded-xl text-purple-950 bg-purple-100 dark:bg-gray-50 dark:text-gray-800">
-        <h1 className="text-2xl font-bold text-center">Register</h1>
+        <h1 className="text-2xl font-bold text-center">Login</h1>
         <form className="space-y-6">
-          <div className="space-y-1 text-sm">
-            <label htmlFor="name" className="block dark:text-gray-600">
-              Your Name
-            </label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              placeholder="Your Name"
-              className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-purple-600"
-            />
-          </div>
-          <div className="space-y-1 text-sm">
-            <label htmlFor="photo" className="block dark:text-gray-600">
-              Photo URL
-            </label>
-            <input
-              type="text"
-              name="photo"
-              id="photo"
-              placeholder="Your Photo URL"
-              className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-purple-600"
-            />
-          </div>
           <div className="space-y-1 text-sm">
             <label htmlFor="email" className="block dark:text-gray-600">
               Email
@@ -61,7 +38,7 @@ const Register = () => {
             </div>
           </div>
           <button className="bg-purple-700 text-white hover:bg-white hover:text-purple-700 block w-1/2 mx-auto p-3 text-center rounded-sm dark:text-gray-50 dark:bg-purple-600">
-            Sign Up
+            Sign in
           </button>
         </form>
         <div className="flex items-center pt-4 space-x-1">
@@ -73,9 +50,9 @@ const Register = () => {
         </div>
         <SocialLogin />
         <p className="text-xs text-center sm:px-6 dark:text-gray-600">
-          Already have an account?{" "}
-          <Link to={"/login"} className="underline dark:text-gray-800">
-            Login
+          Don't have an account?{" "}
+          <Link to={"/register"} className="underline dark:text-gray-800">
+            Register
           </Link>
         </p>
       </div>
@@ -83,4 +60,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Login;
