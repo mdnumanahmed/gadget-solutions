@@ -2,6 +2,7 @@ import { useContext } from "react";
 import MyComposedChart from "../components/MyComposedChart";
 import PageTitle from "../components/PageTitle";
 import { DataContext } from "../providers/DataProvider";
+import Navbar from "../components/Navbar";
 
 const Statistics = () => {
   const { products } = useContext(DataContext);
@@ -51,6 +52,7 @@ const Statistics = () => {
   ];
   return (
     <div>
+      <Navbar />
       <PageTitle
         title={"Statistics"}
         subTitle={

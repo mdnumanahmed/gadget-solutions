@@ -5,6 +5,7 @@ import { FaRegHeart, FaStar, FaRegStar, FaRegStarHalf } from "react-icons/fa";
 import { GrCart } from "react-icons/gr";
 import { DataContext } from "../providers/DataProvider";
 import ReactStars from "react-rating-stars-component";
+import Navbar from "../components/Navbar";
 
 const ProductDetails = () => {
   const { product, handleAddToCart, handleAddToWishlist } =
@@ -29,6 +30,7 @@ const ProductDetails = () => {
 
   return (
     <div>
+      <Navbar />
       <div className="">
         <PageTitle
           className="pb-64"

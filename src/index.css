@@ -11,6 +11,9 @@
 .category-links a.active {
   @apply text-white font-extrabold bg-purple-600
 }
+.myNav li a.active {
+  @apply bg-gray-200 text-purple-600 border-gray-200 border-t-2 rounded-t-2xl
+}
 
 @layer base {
   html {

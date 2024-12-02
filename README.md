@@ -13,26 +13,32 @@ Gadget Solution is an e-commerce platform built for learning and exercise React 
 
 ## Key Features
 
-1. **Structured Navigation Bar**:
+1. **Authentication System**:
+   - Registration with Email-Password, and Google. 
+   - Login user with Email-Password, and Google.
+   - Logged User can see their Profile.
+   - Logged User can see their Cart and Wishlist Items.
+
+2. **Structured Navigation Bar**:
    - Includes Logo, Brand Name, Dashboard, and Stats.
    - Active route indication for better user navigation.
 
-2. **Home Page**:
+3. **Home Page**:
    - Attractive banner with a call-to-action button leading to the Dashboard.
    - Sidebar for category filtering with gadgets displayed dynamically.
    - Gadgets displayed as cards with images, names, prices, and a "Details" button.
 
-3. **Product Details Page**:
+4. **Product Details Page**:
    - Displays comprehensive information about the selected product.
    - Includes buttons to add items to the cart and wishlist with restrictions.
    - Prevents adding duplicate items to the wishlist.
 
-4. **Dashboard**:
+5. **Dashboard**:
    - Two tabs: Cart and Wishlist.
    - Cart tab includes total price calculation and sorting by price.
    - Wishlist includes an option to move items to the cart with checks for price limits.
 
-5. **Smooth User Experience**:
+6. **Smooth User Experience**:
    - Persistent data using Context API and LocalStorage.
    - Dynamic page titles and favicon for improved branding.
    - Reloading the page doesn't cause errors or loss of functionality.

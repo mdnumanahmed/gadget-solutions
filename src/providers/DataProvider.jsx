@@ -37,7 +37,6 @@ const DataProvider = ({ children }) => {
     setInitial(false);
     if (id) {
       const filteredProducts = products.filter((pd) => pd.category_id === id);
-      console.log(id, filteredProducts);
       setCategorizedProducts(filteredProducts);
     } else {
       setInitial(true);

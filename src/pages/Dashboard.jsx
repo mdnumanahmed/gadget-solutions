@@ -4,6 +4,7 @@ import SelectedProductList from "../components/SelectedProductList";
 import { DataContext } from "../providers/DataProvider";
 import { PiSlidersLight } from "react-icons/pi";
 import { NavLink, useNavigate } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 const Dashboard = () => {
   const {
@@ -25,6 +26,7 @@ const Dashboard = () => {
 
   return (
     <div>
+      <Navbar />
       <PageTitle
         title={"Dashboard"}
         subTitle={

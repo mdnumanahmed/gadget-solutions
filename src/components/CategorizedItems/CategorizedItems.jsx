@@ -25,7 +25,9 @@ const CategorizedItems = () => {
               key={category.id}
               onClick={() => handleProductsByCategory(category.id)}
               to={`/gadgets/${category.path}`}
-              className="px-7 py-3 rounded-full bg-[#09080F]/5 text-lg font-medium text-[#09080F]/60 hover:text-white hover:font-extrabold hover:bg-purple-600"
+              className={`${
+                initial && category.id === 0 && "active"
+              } px-7 py-3 rounded-full bg-[#09080F]/5 text-lg font-medium text-[#09080F]/60 hover:text-white hover:font-extrabold hover:bg-purple-600`}
             >
               {category.name}
             </NavLink>
