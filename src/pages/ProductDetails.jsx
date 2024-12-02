@@ -86,7 +86,7 @@ const ProductDetails = () => {
             </div>
             <div className="flex gap-6 items-center">
               <button
-                onClick={() => handleAddToCart(product_id)}
+                onClick={() => handleAddToCart(product)}
                 type="button"
                 className="px-8 py-3 text-lg font-semibold rounded-3xl text-white bg-purple-600 hover:bg-gray-200 hover:border-white hover:text-purple-600 flex gap-3"
               >

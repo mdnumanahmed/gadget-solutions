@@ -2,56 +2,56 @@
     {
         "id": 0,
         "name": "All Products",
-        "path": "gadgets/all-products"
+        "path": "all-products"
     },
     {
         "id": 1,
         "name": "Smart Home",
-        "path": "gadgets/smart-home"
+        "path": "smart-home"
     },
-    {
+        {
         "id": 2,
-        "name": "Wearables",
-        "path": "gadgets/wearables"
+        "name": "Health Tech",
+        "path": "health-tech"
     },
     {
         "id": 3,
-        "name": "Health Tech",
-        "path": "gadgets/health-tech"
+        "name": "Robotics",
+        "path": "robotics"
     },
     {
         "id": 4,
-        "name": "Robotics",
-        "path": "gadgets/robotics"
+        "name": "AI Assistants",
+        "path": "ai"
     },
     {
         "id": 5,
-        "name": "VR/AR",
-        "path": "gadgets/vr-ar"
+        "name": "3D Printing",
+        "path": "3d-printing"
     },
     {
         "id": 6,
-        "name": "AI Assistants",
-        "path": "gadgets/ai"
+        "name": "Gaming",
+        "path": "gaming"
     },
     {
         "id": 7,
-        "name": "3D Printing",
-        "path": "gadgets/3d-printing"
+        "name": "Eco Gadgets",
+        "path": "eco"
     },
     {
         "id": 8,
-        "name": "Gaming",
-        "path": "gadgets/gaming"
+        "name": "Safety",
+        "path": "safety"
     },
     {
         "id": 9,
-        "name": "Eco Gadgets",
-        "path": "gadgets/eco"
+        "name": "Wearables",
+        "path": "wearables"
     },
     {
         "id": 10,
-        "name": "Safety",
-        "path": "gadgets/safety"
+        "name": "VR/AR",
+        "path": "vr-ar"
     }
 ]

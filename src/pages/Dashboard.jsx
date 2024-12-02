@@ -37,7 +37,7 @@ const Dashboard = () => {
               onClick={() => setActiveTab("cart")}
               className={`${
                 activeTab === "cart" ? "bg-white text-purple-600" : "text-white"
-              } border-2 border-white  px-16 py-3 m-2 text-lg font-semibold rounded-3xl hover:bg-white hover:text-purple-600`}
+              } border-2 border-white px-10 lg:px-16 py-3 m-2 text-lg font-semibold rounded-3xl hover:bg-white hover:text-purple-600`}
             >
               Cart
             </button>
@@ -49,7 +49,7 @@ const Dashboard = () => {
                 activeTab === "wishlist"
                   ? "bg-white text-purple-600"
                   : "text-white"
-              } border-2 border-white  px-16 py-3 m-2 text-lg font-semibold rounded-3xl hover:bg-white hover:text-purple-600`}
+              } border-2 border-white  px-10 lg:px-16 py-3 m-2 text-lg font-semibold rounded-3xl hover:bg-white hover:text-purple-600`}
             >
               Wishlist
             </button>

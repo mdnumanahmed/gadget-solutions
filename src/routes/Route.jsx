@@ -10,6 +10,7 @@ import Register from "../pages/Register";
 import Login from "../pages/Login";
 import Profile from "../pages/Profile";
 import PrivateRoute from "./PrivateRoute";
+import ProductList from "../components/CategorizedItems/ProductList";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/gadgets/:id",
         element: <Home />,
       },
       {

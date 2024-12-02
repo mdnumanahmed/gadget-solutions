@@ -4,6 +4,7 @@
         "product_title": "Smart Thermostat",
         "product_image": "https://i.ibb.co.com/4TyWYyd/Smart-Thermostat.jpg",
         "category": "Smart Home",
+        "category_id": 1,
         "price": 399.99,
         "description": "Control your home's temperature remotely and save energy.",
         "specifications": [
@@ -21,6 +22,7 @@
         "product_title": "Smart Doorbell",
         "product_image": "https://i.ibb.co.com/TMWYBMJ/Smart-Doorbell.jpg",
         "category": "Smart Home",
+        "category_id": 1,
         "price": 349.99,
         "description": "See and talk to visitors at your door from anywhere.",
         "specifications": [
@@ -38,6 +40,7 @@
         "product_title": "Smart Security Camera",
         "product_image": "https://i.ibb.co.com/ccyNXxy/Smart-Security-Camera-2.jpg",
         "category": "Smart Home",
+        "category_id": 1,
         "price": 329.99,
         "description": "AI-powered security camera for your home.",
         "specifications": [
@@ -55,6 +58,7 @@
         "product_title": "Smart Light Bulb",
         "product_image": "https://i.ibb.co.com/9hnY5kY/Smart-Speaker.jpg",
         "category": "Smart Home",
+        "category_id": 1,
         "price": 424.99,
         "description": "Customizable and energy-efficient smart lighting.",
         "specifications": [
@@ -72,6 +76,7 @@
         "product_title": "Smart Lock",
         "product_image": "https://i.ibb.co.com/LpZVyVy/Smart-Lock.jpg",
         "category": "Smart Home",
+        "category_id": 1,
         "price": 579.99,
         "description": "Secure keyless entry for your home.",
         "specifications": [
@@ -89,6 +94,7 @@
         "product_title": "Smart Speaker",
         "product_image": "https://i.ibb.co.com/m4z9T1F/Smart-Light-Bulb.jpg",
         "category": "Smart Home",
+        "category_id": 1,
         "price": 399.99,
         "description": "Voice-controlled smart speaker for home automation.",
         "specifications": [
@@ -100,5 +106,226 @@
         "rating": 4.6,
         "brand": "SoundAI",
         "release_date": "2023-03-30"
+    },
+    {
+        "product_id": 201,
+        "product_title": "Fitness Tracker Band",
+        "product_image": "https://i.ibb.co.com/gZPsTbh/Fitness-Tracker-Band.jpg",
+        "category": "Health Tech",
+        "category_id": 2,
+        "price": 59.99,
+        "description": "Track your steps, heart rate, and calories burned.",
+        "specifications": [
+            "Heart rate monitor",
+            "Sleep tracking",
+            "Water-resistant"
+        ],
+        "availability": true,
+        "rating": 4.5,
+        "brand": "FitPulse",
+        "battery_life": "7 days"
+    },
+    {
+        "product_id": 202,
+        "product_title": "Smart Blood Pressure Monitor",
+        "product_image": "https://i.ibb.co.com/6y3W6Fd/Smart-Blood-Pressure-Monitor.jpg",
+        "category": "Health Tech",
+        "category_id": 2,
+        "price": 89.99,
+        "description": "Accurate blood pressure readings synced with your phone.",
+        "specifications": [
+            "Bluetooth enabled",
+            "Digital display",
+            "Portable design"
+        ],
+        "availability": true,
+        "rating": 4.8,
+        "brand": "HealthPro",
+        "warranty": "1 year"
+    },
+    {
+        "product_id": 203,
+        "product_title": "Digital Glucose Monitor",
+        "product_image": "https://i.ibb.co.com/Kcntz5f/Digital-Glucose-Monitor.jpg",
+        "category": "Health Tech",
+        "category_id": 2,
+        "price": 79.99,
+        "description": "Monitor your blood glucose levels seamlessly.",
+        "specifications": [
+            "Non-invasive technology",
+            "App integration",
+            "Quick results"
+        ],
+        "availability": true,
+        "rating": 4.6,
+        "brand": "GlucoEase",
+        "support": "24/7 online support"
+    },
+    {
+        "product_id": 204,
+        "product_title": "Smart Body Scale",
+        "product_image": "https://i.ibb.co.com/rxpk16q/Smart-Body-Scale.jpg",
+        "category": "Health Tech",
+        "category_id": 2,
+        "price": 49.99,
+        "description": "Measures weight, BMI, and body composition.",
+        "specifications": [
+            "Wi-Fi and Bluetooth connectivity",
+            "Tracks multiple users",
+            "Compact and durable"
+        ],
+        "availability": true,
+        "rating": 4.7,
+        "brand": "ScaleSmart",
+        "max_weight": "180 kg"
+    },
+    {
+        "product_id": 205,
+        "product_title": "Pulse Oximeter",
+        "product_image": "https://i.ibb.co.com/68QNWNm/Pulse-Oximeter.jpg",
+        "category": "Health Tech",
+        "category_id": 2,
+        "price": 29.99,
+        "description": "Measures blood oxygen levels and pulse rate.",
+        "specifications": [
+            "LED display",
+            "Portable design",
+            "One-button operation"
+        ],
+        "availability": true,
+        "rating": 4.4,
+        "brand": "OxiCare",
+        "accuracy": "±2%"
+    },
+    {
+        "product_id": 206,
+        "product_title": "Smart Sleep Mask",
+        "product_image": "https://i.ibb.co.com/1mjztgm/Smart-Sleep-Mask.jpg",
+        "category": "Health Tech",
+        "category_id": 2,
+        "price": 69.99,
+        "description": "Promotes better sleep with soothing light and sound therapy.",
+        "specifications": [
+            "Adjustable fit",
+            "Bluetooth speakers",
+            "Light-blocking fabric"
+        ],
+        "availability": true,
+        "rating": 4.3,
+        "brand": "DreamWell",
+        "material": "Soft microfiber"
+    },
+    {
+        "product_id": 301,
+        "product_title": "Robot Vacuum Cleaner",
+        "product_image": "https://i.ibb.co.com/xmVBK8F/Robot-Vacuum-Cleaner.jpg",
+        "category": "Robotics",
+        "category_id": 3,
+        "price": 249.99,
+        "description": "Automatic vacuum cleaner with smart navigation.",
+        "specifications": [
+            "Wi-Fi enabled",
+            "Automatic charging",
+            "Supports voice commands"
+        ],
+        "availability": true,
+        "rating": 4.6,
+        "brand": "CleanBot",
+        "battery_life": "120 minutes",
+        "warranty": "2 years"
+    },
+    {
+        "product_id": 302,
+        "product_title": "Educational Robot Kit",
+        "product_image": "https://i.ibb.co.com/NVLdzPd/Educational-Robot-Kit.jpg",
+        "category": "Robotics",
+        "category_id": 3,
+        "price": 129.99,
+        "description": "DIY robot building kit for STEM learning.",
+        "specifications": [
+            "Programmable via app",
+            "Includes multiple sensors",
+            "Supports coding in Scratch and Python"
+        ],
+        "availability": true,
+        "rating": 4.7,
+        "brand": "LearnBot",
+        "recommended_age": "8+ years"
+    },
+    {
+        "product_id": 303,
+        "product_title": "Humanoid Robot Assistant",
+        "product_image": "https://i.ibb.co.com/gmGmXpg/Humanoid-Robot-Assistant.jpg",
+        "category": "Robotics",
+        "category_id": 3,
+        "price": 999.99,
+        "description": "AI-powered robot for personal assistance and companionship.",
+        "specifications": [
+            "Voice recognition",
+            "Facial recognition",
+            "Customizable personality"
+        ],
+        "availability": false,
+        "rating": 4.5,
+        "brand": "RoboCompanion",
+        "weight": "15 kg",
+        "height": "1.2 m"
+    },
+    {
+        "product_id": 304,
+        "product_title": "Robotic Arm Kit",
+        "product_image": "https://i.ibb.co.com/Mpz5ZtP/Robotic-Arm-Kit.jpg",
+        "category": "Robotics",
+        "category_id": 3,
+        "price": 349.99,
+        "description": "Programmable robotic arm for precision tasks.",
+        "specifications": [
+            "6 degrees of freedom",
+            "Metal chassis",
+            "Compatible with Arduino and Raspberry Pi"
+        ],
+        "availability": true,
+        "rating": 4.8,
+        "brand": "TechArm",
+        "payload_capacity": "2 kg"
+    },
+    {
+        "product_id": 305,
+        "product_title": "Robot Dog",
+        "product_image": "https://i.ibb.co.com/kQtVkMv/Robot-Dog.jpg",
+        "category": "Robotics",
+        "category_id": 3,
+        "price": 799.99,
+        "description": "Interactive robotic pet with lifelike movements.",
+        "specifications": [
+            "Gesture and voice control",
+            "AI learning",
+            "Built-in camera and sensors"
+        ],
+        "availability": true,
+        "rating": 4.6,
+        "brand": "PawBot",
+        "color_options": [
+            "Black",
+            "Silver"
+        ]
+    },
+    {
+        "product_id": 306,
+        "product_title": "Drone with Camera",
+        "product_image": "https://i.ibb.co.com/qxMTd8Q/Drone-with-Camera.jpg",
+        "category": "Robotics",
+        "category_id": 3,
+        "price": 399.99,
+        "description": "High-performance drone for aerial photography.",
+        "specifications": [
+            "4K UHD camera",
+            "GPS and obstacle avoidance",
+            "30-minute flight time"
+        ],
+        "availability": true,
+        "rating": 4.7,
+        "brand": "SkyRover",
+        "max_altitude": "500 meters"
     }
 ]

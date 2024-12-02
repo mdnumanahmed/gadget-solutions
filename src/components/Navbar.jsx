@@ -4,9 +4,11 @@ import { GrCart } from "react-icons/gr";
 import { FaRegHeart } from "react-icons/fa";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
+import { DataContext } from "../providers/DataProvider";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const { cartItems, wishlists } = useContext(DataContext);
 
   const [theme, setTheme] = useState("");
 
@@ -110,7 +112,9 @@ const Navbar = () => {
             >
               <div className="indicator">
                 <GrCart className="text-2xl" />
-                <span className="badge badge-sm indicator-item">8</span>
+                <span className="badge badge-sm indicator-item">
+                  {cartItems.length}
+                </span>
               </div>
             </div>
             <div
@@ -120,7 +124,9 @@ const Navbar = () => {
             >
               <div className="indicator">
                 <FaRegHeart className="text-2xl" />
-                <span className="badge badge-sm indicator-item">8</span>
+                <span className="badge badge-sm indicator-item">
+                  {wishlists.length}
+                </span>
               </div>
             </div>
             {/* Login logout */}
@@ -185,7 +191,7 @@ const Navbar = () => {
               </svg>
             </label>
           </div>
-          <div className="text-right">
+          <div className="text-right md:hidden">
             <button title="Open menu" type="button" className="p-4 lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

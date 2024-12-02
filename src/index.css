@@ -8,6 +8,10 @@
   font-family: "Sora", sans-serif;
 }
 
+.category-links a.active {
+  @apply text-white font-extrabold bg-purple-600
+}
+
 @layer base {
   html {
     font-family: "Sora", system-ui, sans-serif;

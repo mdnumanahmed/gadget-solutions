@@ -13,6 +13,8 @@ export const DataContext = createContext(null);
 const DataProvider = ({ children }) => {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
+  const [categorizedProducts, setCategorizedProducts] = useState([]);
+  const [initial, setInitial] = useState(true);
   const [product, setProduct] = useState({});
   const [activeTab, setActiveTab] = useState("");
   const [cartItems, setCartItems] = useState([]);
@@ -30,6 +32,17 @@ const DataProvider = ({ children }) => {
     };
     loadData();
   }, []);
+
+  const handleProductsByCategory = (id) => {
+    setInitial(false);
+    if (id) {
+      const filteredProducts = products.filter((pd) => pd.category_id === id);
+      console.log(id, filteredProducts);
+      setCategorizedProducts(filteredProducts);
+    } else {
+      setInitial(true);
+    }
+  };
 
   const loadProductDetails = (id) => {
     const foundedProduct = products.find(
@@ -120,6 +133,8 @@ const DataProvider = ({ children }) => {
   const values = {
     categories,
     products,
+    categorizedProducts,
+    initial,
     product,
     cartItems,
     wishlists,
@@ -128,6 +143,7 @@ const DataProvider = ({ children }) => {
     handleAddToCart,
     handleAddToWishlist,
     handleRemoveCartItem,
+    handleProductsByCategory,
     handleSorting,
     handlePurchase,
     loadProductDetails,
